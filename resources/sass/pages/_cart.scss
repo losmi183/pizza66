@@ -1,0 +1,99 @@
+.table-wrapper {
+    background: #eee;
+    padding: 20px;
+
+    .total {
+        margin: 20px 0;
+        text-align: right;
+        h4 {
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+    }
+}
+
+table {
+    width: 100%;
+
+    tr {
+        border-bottom: 1px solid #cccccc;
+    }
+
+    .img-wrapper {
+        img {
+            margin: 10px 0;
+            height: 125px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .product-info {
+        margin: 10px 0;
+        h4 {
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+    }
+
+    .price-info {
+        margin: 10px 0;
+        text-align: right;        
+        h4 {
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+    }
+
+}
+
+
+
+/* Responsivness */
+@media (max-width: 575.98px) {
+    tr, td {
+        display: block;
+    }
+    .product-info {
+        text-align: center;
+    }
+    .price-info {
+        text-align: center !important;
+    }
+}
+
+/*
+* Drink Slider
+*/
+
+.drinks-cart {
+    .img-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+    img {
+        width: auto;
+        height: 150px;
+        padding-right: 5px;
+    }
+    input.qty {
+        text-align: right;
+        width: 100%;
+    }
+    .drink-name {
+        font-weight: 600;
+        font-size: 1.6rem;
+        background: #333;
+        border-radius: 8px;
+        color: $secondary-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h5 {
+            margin-top: 5px;
+            text-align: center;
+        }
+    }
+}
+

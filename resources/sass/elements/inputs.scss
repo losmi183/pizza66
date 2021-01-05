@@ -1,0 +1,49 @@
+.increment-wrapper {
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+  
+    display: flex;
+
+    input {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        height: 35px;
+        border: 1px solid #333;
+        padding: 1px 0;
+        color: #333;
+
+        &:hover, &:focus {
+            outline: none;
+        }
+    }
+    .prev, .next {
+        cursor: pointer;
+        font-size: 20px;        
+        width: 35px;
+        text-align: center;
+        color: #333;
+        background: #ccc;
+        &:hover {
+            background: #333;
+            color: white;
+        }
+    }
+    .prev {
+        border-radius: 3px 0 0 3px ;
+        border-left: 1px solid #333;
+        border-top: 1px solid #333;
+        border-bottom: 1px solid #333;
+    }
+    .next {
+        border-radius: 0 3px 3px 0 ;        
+        border-right: 1px solid #333;
+        border-top: 1px solid #333;
+        border-bottom: 1px solid #333;
+    }
+
+}

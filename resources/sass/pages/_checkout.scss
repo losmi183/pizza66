@@ -1,0 +1,30 @@
+.userdata-wrapper {
+    background: #eee;
+    padding: 20px;
+
+
+    
+}
+
+.mini-cart {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: white;
+
+    img {
+        height: 40px;
+    }
+    .cart-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 5px ;
+    }
+}
+
+#submit-enabled {
+    display: none;
+}
+#submit-disabled {
+    cursor: not-allowed;
+}

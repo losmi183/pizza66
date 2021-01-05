@@ -1,0 +1,14 @@
+.action-wrapper {
+    border: 3px solid #ccc;
+    
+    h3 {
+        color: #ccc;
+        text-transform: uppercase;
+        margin: 10px;
+    }
+    p {
+        color: $secondary-color;
+        // color: #ddd;
+        margin: 10px;
+    }
+}

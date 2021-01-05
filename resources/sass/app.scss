@@ -1,0 +1,54 @@
+// Fonts
+// @import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+/**
+*
+* Custom scss files
+*
+*/
+@import 'mobile';
+
+// Basic
+@import 'basic/config';
+@import 'basic/helpers';
+@import 'basic/reset';
+@import 'basic/titles';
+@import 'basic/tags';
+@import 'basic/bootstrap_override';
+
+// Partials
+@import 'partials/header';
+@import 'partials/footer';
+@import 'partials/nav';
+
+// Boxes
+@import 'boxes/products';
+@import 'boxes/box-simple';
+@import 'boxes/testemoinals';
+
+// Elements
+@import 'elements/inputs';
+
+// components
+@import 'components/actions';
+@import 'components/slideshow';
+
+
+// Slick
+@import 'slick/slick';
+@import 'slick/slick-custom';
+
+// Pages
+@import 'pages/cart';
+@import 'pages/checkout';
+@import 'pages/product';
+
+// Admin
+@import 'admin/admin-panel';
+@import 'admin/orders';

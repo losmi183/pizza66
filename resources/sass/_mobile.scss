@@ -1,0 +1,90 @@
+@media (max-width: 446.98px) {    
+    #navbar .center ul li {
+        font-size: 14px !important;
+        padding: 15px 25px !important;
+    }
+    .icon-wrapper {
+        margin-left: -40px !important;
+        img {
+            height: 60px !important;
+            width: 60px !important;
+            top: 0 !important;
+        }
+    }
+    .box-simple {
+        i {
+            font-size: 30px !important;
+        }
+        h3 {
+            font-size: 16px  !important;
+        }
+        p {
+            font-size: 0.8rem  !important;
+        }
+    }
+}
+
+@media (max-width: 575.98px) {    
+    .hide-mobile {
+        display: none;
+    }
+    .enlarge-mobile {
+        font-size: 1.5rem;
+    }
+    .small-mobile {
+        font-size: 12px !important;
+    }
+    .icon-wrapper {
+        margin-left: -40px !important;
+        img {
+            height: 60px !important;
+            width: 60px !important;
+            top: 0 !important;
+        }
+    }
+    .user-wrapper {
+        a {
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-left: 10px;    
+            transition: all 0.3s;
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }   
+    
+    .drink-title {
+        font-size: 0.8rem !important;
+    }
+
+ }
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) { 
+    .navbar .nav-item a {
+        font-size: 18px !important;
+        padding: 5px 5px !important;
+    }
+    .drink-title {
+        font-size: 0.9rem;
+    }
+ }
+
+// // Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) { 
+    .hide-tablet {
+        display: none !important;
+    }
+    .icon-wrapper {
+        margin-left: -25px;
+    }
+}
+
+// // Large devices (desktops, less than 1200px)
+// @media (max-width: 1199.98px) { 
+   
+
+// @media (min-width: 1200px) { 
+
+// }

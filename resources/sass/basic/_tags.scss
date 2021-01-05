@@ -1,0 +1,33 @@
+.a-primary {
+    color: $primary-color;
+    
+    &:hover, &:visited {
+        text-decoration: none;
+        color: lighten($primary-color, 10%);
+        
+    }
+}
+.a-secondary {
+    color: $secondary-color;
+    
+    &:hover, &:visited {
+        text-decoration: none;
+        color: lighten($secondary-color, 10%);
+    }
+}
+.a-white {
+    color: white;
+    
+    &:hover, &:visited {
+        text-decoration: none;
+        color: darken(white, 10%);
+    }
+}
+.a-black {
+    color: black;
+    
+    &:hover, &:visited {
+        text-decoration: none;
+        color: darken(black, 10%);;
+    }
+}

@@ -1,0 +1,21 @@
+.box-testemonial {
+    .image-wrapp {
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .text-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    h4 {
+        color: #ccc;
+        margin-bottom: 15px;
+    }
+    p {
+        color: white;
+
+    }
+} 

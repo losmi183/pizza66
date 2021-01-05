@@ -1,0 +1,31 @@
+// @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Open+Sans:wght@300;400;600;700&display=swap');
+
+@font-face {
+    font-family: univia;
+    src: url("/font/UniviaPro-Regular.otf") format("woff"), url("font/UniviaPro-Regular.otf")  format("truetype");
+}
+
+$primary-color: #e32a2f;
+$secondary-color: #f29a26;
+$dark-color: #58595b;
+$light-color: #ccc;
+// $font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+// $font-stack: arial, 'Open Sans', monospace, 'JetBrains Mono', monospace;
+$font-stack: univia, arial, 'Open Sans', monospace, 'JetBrains Mono', monospace;
+
+
+body {
+    font-family: $font-stack;
+    
+    background:
+    linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+    linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+    background-color: #131313;
+    background-size: 20px 20px;
+
+
+ }

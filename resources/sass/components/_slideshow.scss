@@ -1,0 +1,30 @@
+#slideshow-main {
+    background: black !important;
+
+    .action-text {
+        font-weight: 600;
+        text-transform: uppercase;
+        margin: 50px 0 0 100px;
+
+        h2 {
+            background: $primary-color;
+            padding: 5px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        h3 {
+            background: $secondary-color;
+            padding: 5px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        p {
+            background: $secondary-color;
+            padding: 5px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        
+    }
+
+}

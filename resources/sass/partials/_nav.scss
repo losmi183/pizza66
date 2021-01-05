@@ -1,0 +1,112 @@
+#navbar {
+
+    background: $primary-color;
+
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 600;
+    }
+
+    .left {
+        display: flex;
+        align-items: center;
+        a {
+            color: white;
+            &:hover, &:visited {
+                color: white;
+                text-decoration: none;
+            }
+        }
+        i {
+            color: $secondary-color;
+            margin-right: 10px;
+        }
+    }
+
+    .center {
+        ul {
+            display: flex;
+            padding: 0;
+            margin: 0;    
+            li {
+                font-size: 20px;
+                text-transform: uppercase;
+                color:white;
+                padding: 15px 40px;
+                list-style-type:none;
+                &:hover {
+                    background: darken($primary-color, 10%);
+                    color: white;
+                    transition: all 0.3s;
+                    a {
+                        text-decoration: none;
+                        }
+                }
+            }
+            li.secondary {
+                color: black;
+                background-color: $secondary-color;
+                transition: all 0.5s;
+                &:hover {
+                    background: darken($secondary-color, 20%);
+                }
+            }
+        }
+        .icon-wrapper {
+            position: relative;
+            height: 60px;
+            width: 80px;
+            img {
+                position: absolute;
+                z-index: 10;
+                top: -10px;
+                right: -20px;
+                width: 80px;
+                height: 80px;
+                transition: all 0.3s;
+                &:hover {
+                    transform: rotate(90deg);
+
+                }
+            }
+        }
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            .count {
+                transition: all 0.3s;
+                transform: scale(1.6);
+            }
+        }
+        
+        a {
+            text-transform: uppercase;
+            font-size: 20px;
+            position: relative;
+        }
+        .count {
+            position: absolute;
+            top: -4px;
+            right: -8px;
+            font-size: 0.6rem;
+            background: $secondary-color;
+            border-radius: 20px;
+            width: 14px;
+            height: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            background: $secondary-color;
+        }
+        
+    }
+
+
+
+}

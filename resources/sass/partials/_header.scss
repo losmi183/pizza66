@@ -1,0 +1,31 @@
+header {
+
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    background: black;
+    padding: 35px 0;
+
+    .logo-wrapper {
+        img {
+            max-height: 40px;
+            // margin: 0 10px;  
+        }
+    }
+
+    .user-wrapper {
+        a {
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-left: 10px;    
+            transition: all 0.3s;
+            &:hover {
+                color: lighten($secondary-color, 20%);
+                transform: scale(1.2);
+            }
+        }
+    }
+}

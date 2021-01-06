@@ -2,6 +2,8 @@
 
 @include('partials.navbar')
 
+<div class="space-230"></div>
+
 <div id="app">
     @yield('content')
 </div>

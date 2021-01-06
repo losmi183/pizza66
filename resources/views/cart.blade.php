@@ -46,7 +46,7 @@
                                 <form action="{{route('removeFromCart', $item->rowId) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-danger btn-sm">X</button>
+                                    <button title="ukloni iz korpe" class="btn btn-danger btn-sm mt-2">X</button>
                                 </form>
                             </div>
                         </td>

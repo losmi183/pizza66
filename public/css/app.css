@@ -10112,7 +10112,15 @@ body {
 }
 
 .space-200 {
-  height: 100px;
+  height: 200px;
+}
+
+.space-225 {
+  height: 225px;
+}
+
+.space-230 {
+  height: 230px;
 }
 
 .primary-color {
@@ -10304,6 +10312,14 @@ select {
 
 .btn {
   text-transform: uppercase;
+}
+
+#fixed {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
 }
 
 header {

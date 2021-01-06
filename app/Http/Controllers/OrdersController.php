@@ -19,7 +19,7 @@ class OrdersController extends Controller
 
         // return $status;
 
-        $orders = Order::orderBy('status', 'ASC')
+        $orders = Order::orderBy('status', 'ASC')->orderBy('created_at', 'DESC')
             ->when($status, function($query, $status) {
                 return $query->where('status', $status);
             })            

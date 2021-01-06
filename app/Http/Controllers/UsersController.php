@@ -6,7 +6,12 @@ use App\Models\User;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
-{
+{    
+    public function __construct()
+    {
+        return $this->middleware('admin');
+    }
+
     public function index()
     {
         $users = User::orderBy('role', 'ASC')->paginate(20);

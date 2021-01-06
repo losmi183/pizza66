@@ -44,14 +44,26 @@
               <li class="sidebar-item"><a href="/admin"><i class="fas fa-tachometer-alt"></i></i>Admin</a></li>
               {{-- <li class="sidebar-item"><a href="/products"><i class="fab fa-product-hunt"></i>Proizvodi</a></li>
               <li class="sidebar-item"><a href="/categories"><i class="fas fa-cogs"></i>Kategorije</a></li> --}}
-              <li class="sidebar-item"><a href="/admin/actions"><i class="fas fa-cogs"></i>Akcije</a></li>
+              <li class="sidebar-item"><a href="/admin/actions"><i class="fas fa-percent"></i></i>Akcije</a></li>
               <li class="sidebar-item"><a href="/admin/orders"><i class="fas fa-shipping-fast"></i></i>Porudzbine</a></li>
               {{-- @if (superadminAccess()) --}}
-                <li class="sidebar-item"><a href="/admin/users"><i class="fas fa-cogs"></i>Korisnici</a></li>
+                <li class="sidebar-item"><a href="/admin/users"><i class="fas fa-user-friends"></i></i>Korisnici</a></li>
               {{-- @endif --}}
               <li class="sidebar-item"><a href="/"><i class="fas fa-home"></i>Sajt Početna</a></li>
-              <li class="sidebar-item"><a href="{{ route('logout') }}"><i class="fas fa-sign-out-alt"></i>Izloguj se</a></li>
-          </ul>
+
+
+
+                                
+              <li class="sidebar-item"><a href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();">
+                  <i class="fas fa-sign-out-alt mr-1 enlarge-mobile"></i><span class="hide-mobile">Odjava</span>
+              </a></li>
+                              
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+              </form>
+
   
       </div>
       <!-- /#sidebar-wrapper -->

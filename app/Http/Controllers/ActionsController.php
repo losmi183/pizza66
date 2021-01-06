@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class ActionsController extends Controller
 {
+    public function __construct()
+    {
+        return $this->middleware('admin');
+    }
+
     public function index()
     {
         $actions = Action::orderBy('status', 'ASC')->paginate(20);

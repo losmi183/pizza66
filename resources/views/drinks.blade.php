@@ -28,8 +28,10 @@
                                         <h5 class="">{{$product->price}} RSD</h5>                                                   
                                     @endif
                                 </div>
-
-                                <div class="info-addon">NOVO</div>
+                                
+                                @if ($product->badge)
+                                    <div class="info-addon">{{$product->badge}}</div>
+                                @endif
                             </div>
     
                             {{-- Form inputs --}}

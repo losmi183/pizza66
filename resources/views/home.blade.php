@@ -51,7 +51,10 @@
                                     <a class="title" href="{{ route('product', $product->slug) }}">{{$product->name}}</a>
                                     <p class="info">{{$product->content}}</p>
                                 </div>
-                                <div class="info-addon">NOVO</div>
+                                
+                                @if ($product->badge)
+                                    <div class="info-addon">{{$product->badge}}</div>
+                                @endif
                             </div>
     
                             {{-- Form inputs --}}
@@ -70,7 +73,7 @@
                             {{-- End of from inputs                       --}}                   
                             
                             <div class="order-wrapper">
-                                <button href="#" class="btn btn-danger btn-block"><i class="fas fa-shopping-cart mr-2" aria-hidden="true"></i>Dodaj u korpu</button>
+                                <button class="btn btn-danger btn-block"><i class="fas fa-shopping-cart mr-2" aria-hidden="true"></i>Dodaj u korpu 1</button>
                             </div>
                         </form>
                     </div>
@@ -112,7 +115,9 @@
                                     @endif
                                 </div>
 
-                                <div class="info-addon">NOVO</div>
+                                @if ($product->badge)
+                                    <div class="info-addon">{{$product->badge}}</div>
+                                @endif
                             </div>
     
                             {{-- Form inputs --}}

@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class OrdersController extends Controller
 {
+    public function __construct()
+    {
+        return $this->middleware('admin');
+    }
+    
     public function index()
     {
 

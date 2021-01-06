@@ -26,7 +26,10 @@
                                     <a class="title" href="{{ route('product', $product->slug) }}">{{$product->name}}</a>
                                     <p class="info">{{$product->content}}</p>
                                 </div>
-                                <div class="info-addon">NOVO</div>
+                                
+                                @if ($product->badge)
+                                    <div class="info-addon">{{$product->badge}}</div>
+                                @endif
                             </div>
     
                             {{-- Form inputs --}}

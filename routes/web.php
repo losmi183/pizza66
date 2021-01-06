@@ -11,6 +11,8 @@ use App\Http\Controllers\ActionsController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserdataController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +32,8 @@ Route::get('/', [HomepageController::class, 'index'])->name('/');
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+// LAravel default /home route - for redirecting with middleware
+Route::get('/home', [HomepageController::class, 'index'])->name('home');
 
 Route::get('/pizza', [ShopController::class, 'pizza'])->name('pizza');
 
@@ -74,6 +77,15 @@ Route::get('/thankyou', function() {
     return view('thankyou');
 })->name('thankyou');
 
+/**
+ * User
+ */
+Route::get('/user/data', [UserdataController::class, 'index'])->name('userdata');
+
+Route::patch('/user/data/{user}', [UserdataController::class, 'update']);
+
+Route::post('/user/changePassword/{user}', [UserdataController::class, 'changePassword']);
+
 
 /**
  * 
@@ -105,9 +117,6 @@ Route::get('/thankyou', function() {
     Route::post('/actions/changeStatus/{action}', [ActionsController::class, 'changeStatus']);
 
     Route::delete('/actions/{action}', [ActionsController::class, 'destroy']);
-
-
-
 
  });
 

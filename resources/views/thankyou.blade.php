@@ -16,6 +16,14 @@
         <a href="/" class="btn btn-danger mt-4">Početna</a >
         <div class="space-200"></div>
 
+        
+<select name="cars" id="cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+  </select>
+
     </div>          <!-- container  -->
 </section>
     

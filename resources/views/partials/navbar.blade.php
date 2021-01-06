@@ -1,4 +1,4 @@
-<nav id="navbar">
+<nav id="navbar" class="mb-5">
     <div class="container">
         <div class="wrapper">
 

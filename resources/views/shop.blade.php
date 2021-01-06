@@ -2,7 +2,6 @@
 
 @section('content')
 
-<div class="space-50"></div>
 <h1 class="title-secondary">PIZZA</h1>
 <div class="container"><hr style="background-color: orange; width: 50%;"></div>      
 <div class="space-50"></div>   

@@ -49746,6 +49746,8 @@ __webpack_require__(/*! ./jquery/inputQty */ "./resources/js/jquery/inputQty.js"
 
 __webpack_require__(/*! ./jquery/admin */ "./resources/js/jquery/admin.js");
 
+__webpack_require__(/*! ./jquery/message */ "./resources/js/jquery/message.js");
+
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
  * The following block of code may be used to automatically register your
@@ -49928,6 +49930,23 @@ $(document).ready(function () {
       input.val(value);
     }
   });
+});
+
+/***/ }),
+
+/***/ "./resources/js/jquery/message.js":
+/*!****************************************!*\
+  !*** ./resources/js/jquery/message.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  var alert = $('.alert-flash');
+  alert.show('fast');
+  setTimeout(function () {
+    alert.hide('slow');
+  }, 2000);
 });
 
 /***/ }),

@@ -2,7 +2,6 @@
 
 @section('content')
 
-<div class="space-50"></div>
 <h1 class="title-secondary">Akcije</h1>
 <div class="container"><hr style="background-color: orange; width: 50%;"></div>      
 <div class="space-50"></div>
@@ -73,7 +72,7 @@
                             {{-- End of from inputs                       --}}                   
                             
                             <div class="order-wrapper">
-                                <button class="btn btn-danger btn-block"><i class="fas fa-shopping-cart mr-2" aria-hidden="true"></i>Dodaj u korpu 1</button>
+                                <button class="btn btn-danger btn-block"><i class="fas fa-shopping-cart mr-2" aria-hidden="true"></i>Dodaj u korpu</button>
                             </div>
                         </form>
                     </div>

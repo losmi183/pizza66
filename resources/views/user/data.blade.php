@@ -10,7 +10,7 @@
                 <div class="my-4"></div>
                 <h3 class="title-primary">Moji podaci</h3>
                 <div class="mb-4"></div>
-                <div class="alert alert-dark">Sačuvajte Vaše podatke kako bi ste lakše poručivali</a></span></div>           
+                <div class="alert alert-dark">Sačuvajte Vaše podatke kako bi ste lakše i brže poručivali.</a></span></div>           
             </div>        {{-- End Col 12  --}}
 
             <div class="col-12 col-lg-6 col-xl-5">

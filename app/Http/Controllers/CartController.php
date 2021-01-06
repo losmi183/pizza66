@@ -29,10 +29,7 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {        
-
-        // return $request->all();
-
+    {   
         // Calculate sum of all addons
         $addonSum = 0;
         $addons = [];
@@ -61,7 +58,11 @@ class CartController extends Controller
             ]
         ]);
 
-        return back();
+        if($request->redirect) {
+            return redirect()->route('cart')->with('success', 'Proizvod je dodat u korpu');
+        }
+
+        return back()->with('success', 'Proizvod je dodat u korpu');
     }
     
     
@@ -86,7 +87,7 @@ class CartController extends Controller
     public function destroy($id)
     {
         Cart::remove($id);
-        return back();
+        return back()->with('success', 'Proizvod uklonjen iz korpe');
     }
 
     /**

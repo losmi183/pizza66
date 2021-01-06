@@ -20,3 +20,17 @@
     }
 
 }
+
+/**
+* Buttons
+*/
+
+.btn-warning {
+    background: $secondary-color;
+    &:hover, &:active {
+        background: lighten($secondary-color, 5%);
+    }
+}
+.btn {
+    text-transform: uppercase;
+}

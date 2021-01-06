@@ -1,4 +1,4 @@
-<nav id="navbar" class="mb-5">
+<nav id="navbar">
     <div class="container">
         <div class="wrapper">
 
@@ -24,8 +24,7 @@
                 </a>
             </div>
         </div>
-
-    </div>
+    </div>  {{-- container  --}}
 </nav>
 
 {{-- <nav class="navbar navbar-expand-sm navbar-light bg-light">
@@ -44,3 +43,11 @@
 
     </div>
 </nav> --}}
+
+<div class="container">
+    <div class="message-wrapper">
+        @include('partials.messages')
+    </div>
+</div>
+
+<div class="space-60"></div>

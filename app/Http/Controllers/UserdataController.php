@@ -40,7 +40,7 @@ class UserdataController extends Controller
             'city' => $request->city,
         ]);
 
-        return back();
+        return back()->with('success', 'Vaši podaci su sačuvani');
     }
     
     public function changePassword(Request $request, User $user)

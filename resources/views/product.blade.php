@@ -7,7 +7,6 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <div class="space-50"></div>
                 <div class="image-wrapper">
                     <img src="/img/products/madjarica.png" alt="" class="img-fluid">
                 </div>
@@ -46,6 +45,9 @@
                         <input class="size" type="hidden" name="size" value="mala">                        
                         <input type="hidden" name="image" value="{{$product->image}}">   
                         {{-- End of from inputs                       --}}  
+
+                        {{-- Only product page input for redirecting  --}}
+                        <input type="hidden" name="redirect" value="1">
 
                         <h4 class="addons-*title">Dodaci</h4>  
 

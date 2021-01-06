@@ -9,12 +9,17 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Http\Requests\CheckoutStoreRequest;
 
 class CheckoutController extends Controller
-{
+{    
+    public function __construct()
+    {
+        return $this->middleware('emptyCart');
+    }
+
     public function index()
     {
         $user = auth()->user();
 
-        return view('checkout', compact('user'));
+        return view('checkout', compact('user'))->with('success', 'Unesite Vaše podatke');
     }
 
 
@@ -49,7 +54,7 @@ class CheckoutController extends Controller
 
         Cart::destroy();
 
-        return redirect()->route('/');
+        return redirect()->route('/')->with('success', 'Vaša porudzbina je primljena');
     }
 
 

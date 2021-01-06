@@ -16,6 +16,7 @@ require('./slick/slick-customers');
 require('./jquery/selectSize');
 require('./jquery/inputQty');
 require('./jquery/admin');
+require('./jquery/message');
 
 
 

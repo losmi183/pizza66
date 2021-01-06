@@ -10292,6 +10292,20 @@ select {
   color: #ccc !important;
 }
 
+/**
+* Buttons
+*/
+.btn-warning {
+  background: #f29a26;
+}
+.btn-warning:hover, .btn-warning:active {
+  background: #f3a53e;
+}
+
+.btn {
+  text-transform: uppercase;
+}
+
 header {
   background: black;
   padding: 35px 0;
@@ -10611,6 +10625,39 @@ header .user-wrapper a:hover {
   display: inline-block;
 }
 
+.message-wrapper {
+  position: relative;
+}
+
+.message {
+  position: absolute;
+  right: 0;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.alert-flash {
+  display: none;
+  width: 100%;
+  background-color: #f29a26;
+  color: black;
+  padding: 10px 20px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.alert-error {
+  background-color: #e32a2f;
+  color: white;
+}
+
+@media (max-width: 446.98px) {
+  .alert-flash {
+    font-size: 16px;
+  }
+}
 /* Slider */
 .slick-slider {
   position: relative;

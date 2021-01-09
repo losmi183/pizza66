@@ -4,7 +4,7 @@ $(document).ready(function(){
     function sliderInit1() {
         $(".drinks-cart").slick({
             autoplay: true,
-            autoplaySpeed: 6000,
+            autoplaySpeed: 3000,
             dots: true,
             infinite: true,
             slidesToShow: slides,
@@ -19,18 +19,18 @@ $(document).ready(function(){
         var slides = 6;
         var scroll = 6;
         if(width < 350) {slides = 1; scroll = 1; };
-        if(width >= 350 && width < 500 ) {slides = 2; scroll = 2; };
-        if(width >= 500 && width < 767 ) {slides = 3; scroll = 3; };
-        if(width >= 767 && width < 992 ) {slides = 4; scroll = 4; };
-        if(width >= 992 && width < 1200 ) {slides = 5; scroll = 5; };
-        if(width >= 1200 ) {slides = 6; scroll = 6; };;
+        if(width >= 350 && width < 500 ) {slides = 1; scroll = 1; };
+        if(width >= 500 && width < 767 ) {slides = 2; scroll = 1; };
+        if(width >= 767 && width < 992 ) {slides = 4; scroll = 2; };
+        if(width >= 992 && width < 1200 ) {slides = 5; scroll = 2; };
+        if(width >= 1200 ) {slides = 6; scroll = 2; };;
         return slides;
     }
 
 
     // Initial set slides based on screen width
     var slides = 6;
-    scroll = 6;
+    scroll = 2;
     
     // Change slides if screen smaller
     slides = setSlides($(window).width());

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\PizzaOrdered;
 use App\Models\Order;
 use App\Models\OrderProduct;
 use Illuminate\Http\Request;
@@ -53,6 +54,9 @@ class CheckoutController extends Controller
         }
 
         Cart::destroy();
+
+        // Fire Event for Pusher
+        event(new PizzaOrdered($order));
 
         return redirect()->route('/')->with('success', 'Vaša porudzbina je primljena');
     }

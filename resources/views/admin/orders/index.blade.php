@@ -7,6 +7,16 @@
     <span class='admin-title'>Porudzbine</span>
 </div>
 
+<pizza-ordered 
+    id = {{ $lastOrder->id }}
+    time = "{{ formatDate($lastOrder->created_at) }}" 
+    name = {{ $lastOrder->ime }}
+    phone = "{{ $lastOrder->telefon }}"
+    {{-- address = {{ $lastOrder->adresa }} --}}
+    sum = {{ $lastOrder->suma }}
+
+></pizza-ordered>
+
 <div class="card-body row">    
     <div class="col-xl-3" >
         <aside>
@@ -38,6 +48,8 @@
             </div> 
         </aside>
     </div>
+
+
 
     <div class="col-xl-9">    
         <table class="table">
@@ -82,12 +94,29 @@
         {{$orders->appends(request()->input())->links()}}
     </div>
 
+
+    <audio id="audio" src="http://www.soundjay.com/button/beep-07.wav" autoplay="false" ></audio>
+    <a onclick="playSound();"> Play</a>
+
 </div>         {{-- Card body  --}}
 
 @endsection
 
 @section('extra-js')
     <script>
+
+    //     function playSound() {
+    //       var sound = document.getElementById("audio");
+    //       sound.play();
+    //   }
+
+
+        window.onload = function() {
+            var sound = document.getElementById("audio");
+            sound.play();
+        };
+
+
         $( document ).ready(function() {            
 
             // Form make get request with query string
@@ -95,12 +124,6 @@
                 var form = $(this).closest('form');
                 form.submit();
             });
-
-
-            // Change order status
-
-
-
         });
     </script>    
 @endsection

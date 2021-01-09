@@ -1,13 +1,14 @@
-@extends('layouts.app')
+@include('partials.header')
 
-@section('content')
+@include('partials.navbar-checkout')
 
-
-
+<div class="space-30"></div>
 
 <section id="cart">
     <div class="container">        
-        <div class="table-wrapper">            
+        <div class="table-wrapper">      
+            
+            <div class="space-100"></div>
             
             <h1 class="title-primary">Plaćanje</h1>
             <div class="container"><hr></div>      
@@ -124,26 +125,25 @@
         </div>              <!-- MAin wrapper  -->
     </div>          <!-- container  -->
 </section>
+
+<div class="space-50"></div>
     
-@endsection
 
+<script>
+    $(document).ready(function() {            
+        $('#accept').click(function() {
+            if( $(this).prop('checked') == true ) {
+                // $('#submit').prop('disabled', false);
+                $('#submit-disabled').hide();
+                $('#submit-enabled').show();
+            }
+            else {
+        //         // $('#submit').prop('disabled', true);
+                $('#submit-enabled').hide();
+                $('#submit-disabled').show();
+            }
+        })
+    });
+</script>    
 
-@section('extra-js')
-    <script>
-        $(document).ready(function() {            
-            $('#accept').click(function() {
-                if( $(this).prop('checked') == true ) {
-                    // $('#submit').prop('disabled', false);
-                    $('#submit-disabled').hide();
-                    $('#submit-enabled').show();
-                }
-                else {
-            //         // $('#submit').prop('disabled', true);
-                    $('#submit-enabled').hide();
-                    $('#submit-disabled').show();
-                }
-            })
-        });
-    </script>    
-@endsection
-
+@include('partials.footer')

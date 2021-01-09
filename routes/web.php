@@ -25,6 +25,15 @@ use App\Http\Controllers\UserdataController;
 |
 */
 
+
+Route::get('/fire', function() 
+{
+    event(new \App\Events\PizzaOrdered('nova Porudzbina'));
+    return 'fired';
+});
+
+
+
 Route::get('/', [HomepageController::class, 'index'])->name('/');
 // Route::get('/', function() {
 //     return 'asdasdasd';
@@ -41,11 +50,6 @@ Route::get('/drinks', [ShopController::class, 'drinks'])->name('drinks');
 
 
 Route::get('/product/{slug}', [ShopController::class, 'show'])->name('product');
-
-// Test addons
-// Route::post('/addons/{product_id}', [ShopController::class, 'addons'])->name('addons');
-
-
 
 
 /**

@@ -4,6 +4,8 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+const { default: Echo } = require('laravel-echo');
+
 require('./bootstrap');
 
 // Slick components
@@ -35,6 +37,8 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
+Vue.component('pizza-ordered', require('./components/PizzaOrdered.vue').default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -42,5 +46,12 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  */
 
 const app = new Vue({
-    el: '#app',
+    el: '#app', 
+    // mounted() {
+    //     window.Echo.channel('order-tracker')
+    //     .listen('PizzaOrdered', (e) => {
+    //         console.log('Pizza je narucena');
+    //     });
+    //     // console.log('OMG Realtime bro');
+    // }
 });

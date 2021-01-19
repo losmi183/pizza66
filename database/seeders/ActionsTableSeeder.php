@@ -29,8 +29,14 @@ class ActionsTableSeeder extends Seeder
         ]);
         Action::create([
             'name' => 'Nedeljom Porodična ',
-            'new_price' => '20% popusta',
-            'description' => 'Besplatna dostava: Starcevo, Omoljica, Ivanovo i Brestovac',
+            'new_price' => '90% popusta',
+            'description' => 'Akcija 3',
+            'image' => '/img/actions/1.jpg'
+        ]);
+        Action::create([
+            'name' => 'Nedeljom Porodična ',
+            'new_price' => 'Bez popusta',
+            'description' => 'Full cena',
             'image' => '/img/actions/2.jpg'
         ]);
     }

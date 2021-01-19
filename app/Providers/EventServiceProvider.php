@@ -20,7 +20,10 @@ class EventServiceProvider extends ServiceProvider
         ],
         \App\Events\PizzaOrdered::class => [
             \App\Listeners\PizzaOrderedListener::class
-        ]
+        ],
+        \App\Events\TimeResponse::class => [
+            \App\Listeners\TimeResponseListener::class
+        ],
     ];
 
     /**

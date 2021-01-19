@@ -33,17 +33,15 @@
     
                             {{-- Form inputs --}}
                             <select class="form-control select-size" name="price">
-                                @foreach (json_decode($product->prices) as $size => $price)
-                                    <option value="{{ $price }}">{{ $size }} {{size($size)}}cm - {{ $price }} RSD</option>
+                                @foreach ($product->prices as $price)
+                                    <option value="{{ $price->id }}">{{ $price->size }} {{ $price->cm }} cm - {{ $price->rsd }} RSD</option>
                                 @endforeach
-                            </select>    
+                            </select>   
                             <input type="hidden" name="id" value="{{$product->id}}">                        
                             <input type="hidden" name="name" value="{{$product->name}}">                        
                             <input type="hidden" name="qty" value="1">                        
-                            <input class="length" type="hidden" name="weight" value="0">                        
                             <input type="hidden" name="content" value="{{$product->content}}">                        
-                            <input class="size" type="hidden" name="size" value="mala">                        
-                            <input type="hidden" name="image" value="{{$product->image}}">   
+                            <input type="hidden" name="image" value="{{$product->image}}">    
                             {{-- End of from inputs                       --}}                   
                             
                             <div class="order-wrapper">

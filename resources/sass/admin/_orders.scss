@@ -1,8 +1,12 @@
+.bg-lastest {
+    background: $primary-color;
+    color: white;
+}
 .bg-active {
-    background: rgb(253, 213, 213);
+    background: lighten($secondary-color, 20);
 }
 .bg-finished {
-    background: rgb(215, 252, 215);
+    background: #eee;
 }
 .bg-admin {
     background: rgb(187, 225, 255);

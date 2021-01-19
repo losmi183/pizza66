@@ -1,4 +1,4 @@
-<div id="fixed">
+<div >
     <header >
         <div class="container">
             <div class="row">

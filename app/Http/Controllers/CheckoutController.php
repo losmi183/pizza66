@@ -58,7 +58,10 @@ class CheckoutController extends Controller
         // Fire Event for Pusher
         event(new PizzaOrdered($order));
 
-        return redirect()->route('/')->with('success', 'Vaša porudzbina je primljena');
+        // Save order id in session
+        session(['order_id' => $order->id]);  
+
+        return redirect()->route('thankyou')->with('success', 'Vaša porudzbina je primljena');
     }
 
 

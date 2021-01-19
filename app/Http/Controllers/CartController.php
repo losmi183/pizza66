@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AddonOption;
+use App\Models\Price;
 use App\Pizza;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -29,11 +30,12 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
+    {           
+        $price = Price::find($request->price);
+
         // Calculate sum of all addons
         $addonSum = 0;
         $addons = [];
-
         if($request->addon) 
         {
             foreach($request->addon as $addon) 
@@ -45,15 +47,16 @@ class CartController extends Controller
         }
 
         Cart::add([
-            'price' => $request->price + $addonSum, 
+            'price' => $price->rsd + $addonSum, 
             'id' => $request->id, 
             'name' => $request->name, 
             'qty' => $request->qty, 
             'weight' => 1, 
             'options' => [
-                'content' => $request->content,
-                'size' => $request->size,
                 'image' => $request->image,
+                'content' => $request->content,
+                'size' => $price->size,
+                'cm' => $price->cm,
                 'addons' => $addons
             ]
         ]);
@@ -63,6 +66,40 @@ class CartController extends Controller
         }
 
         return back()->with('success', 'Proizvod je dodat u korpu');
+    }
+
+    /**
+     * Store Drink in cart
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function storeDrink(Request $request)
+    {
+        // return $request->all();
+        $addons = [];
+
+        Cart::add([
+            'id' => $request->id, 
+            'name' => $request->name, 
+            'price' => $request->price, 
+            'qty' => $request->qty, 
+            'weight' => 1, 
+            'options' => [
+                'image' => $request->image,
+                'content' => '',
+                'size' => '',
+                'cm' => '',
+                'addons' => $addons
+            ]
+        ]);
+
+        if($request->redirect) {
+            return redirect()->route('cart')->with('success', 'Proizvod je dodat u korpu');
+        }
+
+        return back()->with('success', 'Proizvod je dodat u korpu');
+
     }
     
     

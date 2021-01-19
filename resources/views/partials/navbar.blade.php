@@ -91,4 +91,5 @@
             @include('partials.messages')
         </div>
     </div>
+    <time-response order_id="{{ session('order_id') }}"></time-response>
 </div>

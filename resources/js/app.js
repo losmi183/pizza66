@@ -15,7 +15,6 @@ require('./slick/slick-actions');
 require('./slick/slick-customers');
 
 // Jquery Components
-require('./jquery/selectSize');
 require('./jquery/inputQty');
 require('./jquery/admin');
 require('./jquery/message');
@@ -39,6 +38,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 Vue.component('pizza-ordered', require('./components/PizzaOrdered.vue').default);
 
+Vue.component('time-response', require('./components/TimeResponse.vue').default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -51,6 +52,15 @@ const app = new Vue({
     //     window.Echo.channel('order-tracker')
     //     .listen('PizzaOrdered', (e) => {
     //         console.log('Pizza je narucena');
+    //     });
+    //     // console.log('OMG Realtime bro');
+    // }
+    // mounted() {
+    //     // Ime kanala na kome event emituje
+    //     window.Echo.channel('time-response')
+    //     // Ime samog eventa
+    //     .listen('TimeResponse', (e) => {
+    //         console.log('Vreme Potrebno za dostavu:' + e.time + ' minuta');
     //     });
     //     // console.log('OMG Realtime bro');
     // }

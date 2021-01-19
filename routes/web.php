@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UsersController;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -10,9 +11,9 @@ use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\ActionsController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\HomepageController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserdataController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TimeResponseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,9 +57,13 @@ Route::get('/product/{slug}', [ShopController::class, 'show'])->name('product');
  * Cart Routes
  */
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
+
 // Add product to cart
 Route::post('/addToCart', [CartController::class, 'store'])->name('addToCart');
-// Remove From cart
+// Add drink to cart
+Route::post('/addDrinkToCart', [CartController::class, 'storeDrink'])->name('addDrinkToCart');
+
+// Remove product From cart
 Route::delete('/removeFromCart/{rowId}', [CartController::class, 'destroy'])->name('removeFromCart');
 
 // Cart Helpers
@@ -106,6 +111,9 @@ Route::post('/user/changePassword/{user}', [UserdataController::class, 'changePa
     Route::get('orders/{id}', [OrdersController::class, 'show']);
     
     Route::post('/orders/status/{order}', [OrdersController::class, 'changeStatus']);
+
+    // Order time response
+    Route::post('/orders/timeResponse', [TimeResponseController::class, 'fireTime']);
     
     // Users
     Route::get('/users', [UsersController::class, 'index']);

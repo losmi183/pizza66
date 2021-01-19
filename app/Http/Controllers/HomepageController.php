@@ -17,7 +17,7 @@ class HomepageController extends Controller
     {
         $actions = Action::where('status', 'active')->get();
 
-        $pizza = Product::where('type', 'pizza')->inRandomOrder()->take(6)->get();
+        $pizza = Product::where('type', 'pizza')->with('prices')->inRandomOrder()->take(6)->get();
         
         $drinks = Product::where('type', 'drink')->inRandomOrder()->take(6)->get();
 

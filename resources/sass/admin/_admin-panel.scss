@@ -49,8 +49,11 @@
             padding: 8px 25px;
             color: white;
             &:hover {
-                text-decoration: none;
-                margin-left: 5px;
+                text-decoration: none;  
+                color: $primary-color !important;
+                i {
+                    color: $primary-color !important;
+                }  
             }
         }
     }

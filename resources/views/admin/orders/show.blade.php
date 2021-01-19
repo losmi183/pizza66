@@ -1,8 +1,6 @@
 @extends('admin.layout')
 
-@section('content')
-
-    
+@section('content')    
 
 <div class="card-header">
     <div class="form-group d-flex align-middle m-0">
@@ -14,7 +12,6 @@
 
 <div class="card-body row">            
     <div class="col-lg-4 mb-4"> 
-
         <h3 class="mb-4">Podaci o kupcu</h3>
         <div class="line"></div>
         Id Porudzbine: <strong>{{$order->id}}</strong   > <hr>
@@ -26,6 +23,23 @@
         Dodatna napomena: <p>{{$order->napomene}}</p> <hr>
         Ukupno za naplatu: <strong>{{$order->suma}}</strong> <hr>
 
+        <form action="/admin/orders/timeResponse" method="POST">
+            @csrf
+            <input type="hidden" name="order_id" value="{{ $order->id }}">
+            <div class="form-group">
+                <label>VREME DOSTAVE</label>
+                <select name="time" class="form-control">
+                    <option {{ $order->time == 15 ? 'selected' : '' }} value="15">15 minuta</option>
+                    <option {{ $order->time == 20 ? 'selected' : '' }} value="20">20 minuta</option>
+                    <option {{ $order->time == 25 ? 'selected' : '' }} value="25">25 minuta</option>
+                    <option {{ $order->time == 30 ? 'selected' : '' }} value="30">30 minuta</option>
+                    <option {{ $order->time == 40 ? 'selected' : '' }} value="40">40 minuta</option>
+                    <option {{ $order->time == 50 ? 'selected' : '' }} value="50">50 minuta</option>
+                    <option {{ $order->time == 60 ? 'selected' : '' }} value="60">60 minuta</option>
+                </select>
+            </div>
+            <button class="btn btn-danger btn-block">Pošalji</button>
+        </form>
     </div>   
 
 <div class="col-lg-8">

@@ -20,6 +20,7 @@ class CreateOrdersTable extends Migration
 
             $table->integer('suma');
             $table->string('status')->default('active');
+            $table->unsignedSmallInteger('time')->default('30');
 
             $table->string('ime');
             $table->string('prezime')->nullable();

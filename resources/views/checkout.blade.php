@@ -29,17 +29,6 @@
                         @enderror                  
                     </div>
 
-                    {{-- Email  --}}
-                    <div class="form-group">
-                        <label class="">Email</label>        
-                        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') ?? ($user ? $user->email : '') }}"  autocomplete="email" autofocus>    
-                        @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror                  
-                    </div>
-
                     {{-- Adresa  --}}
                     <div class="form-group">
                         <label class="">Adresa <span class="text-danger">*</span></label>        
@@ -54,7 +43,7 @@
                     {{-- Telefon  --}}
                     <div class="form-group">
                         <label class="">Telefon <span class="text-danger">*</span></label>        
-                        <input type="number" class="form-control @error('telefon') is-invalid @enderror" name="telefon" value="{{ old('telefon') ?? ($user ? $user->phone : '') }}"  autocomplete="telefon" autofocus>    
+                        <input type="text" class="form-control @error('telefon') is-invalid @enderror" name="telefon" value="{{ old('telefon') ?? ($user ? $user->phone : '') }}"  autocomplete="telefon" autofocus>    
                         @error('telefon')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -126,8 +115,9 @@
     </div>          <!-- container  -->
 </section>
 
-<div class="space-50"></div>
-    
+<div class="space-50"></div>   
+
+@include('partials.footer')
 
 <script>
     $(document).ready(function() {            
@@ -144,6 +134,4 @@
             }
         })
     });
-</script>    
-
-@include('partials.footer')
+</script>  

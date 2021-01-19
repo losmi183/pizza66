@@ -11,10 +11,10 @@
         <div class="row">
 
             @foreach ($drinks as $product)
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="product-box">
 
-                        <form class="product-form" action="{{route('addToCart')}}" method="POST">
+                        <form class="product-form" action="{{route('addDrinkToCart')}}" method="POST">
                             @csrf
                         
                             <div class="image-wrapper" style="cursor: pointer">

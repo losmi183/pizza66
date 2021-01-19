@@ -59,10 +59,7 @@
             </div>
 
             <div class="row mt-5">
-                <div class="col-sm-6 mb-2">
-                    <a href="/" class="btn btn-warning btn-block">Nazad u meni</a>
-                </div>
-                <div class="col-sm-6 mb-2">
+                <div class="col-12 mb-2">
                     <a href="{{route('checkout')}}" class="btn btn-danger btn-block">Plaćanje</a href="{{route('checkout')}}">
                 </div>
             </div>
@@ -85,7 +82,7 @@
                                         @endif
                                     </div>
                                     <div class="form-wrapper">
-                                        <form action="{{route('addToCart')}}" method="POST">
+                                        <form action="{{route('addDrinkToCart')}}" method="POST">
                                             @csrf
 
                                             {{-- Input with increments jquery component  --}}

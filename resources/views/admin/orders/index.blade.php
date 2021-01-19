@@ -7,16 +7,6 @@
     <span class='admin-title'>Porudzbine</span>
 </div>
 
-<pizza-ordered 
-    id = {{ $lastOrder->id }}
-    time = "{{ formatDate($lastOrder->created_at) }}" 
-    name = {{ $lastOrder->ime }}
-    phone = "{{ $lastOrder->telefon }}"
-    {{-- address = {{ $lastOrder->adresa }} --}}
-    sum = {{ $lastOrder->suma }}
-
-></pizza-ordered>
-
 <div class="card-body row">    
     <div class="col-xl-3" >
         <aside>
@@ -49,9 +39,9 @@
         </aside>
     </div>
 
-
-
-    <div class="col-xl-9">    
+    <div class="col-xl-9">   
+        <pizza-ordered ></pizza-ordered>
+        
         <table class="table">
             <tr>
                 <th>#</th>
@@ -65,9 +55,16 @@
                 <th></th>
             </tr>
             @foreach ($orders as $order)
+
+            @if ($loop->index == 0)
+                <tr >
+                    <td class="bg-danger text-white" colspan="8">Poslednja porudzbina</td>
+                </tr>
+            @endif
+
             <tr class=" {{setBgColor($order->status)}} ">
                 <td>{{$order->id}}</td>
-                <td>{{ formatDate($order->created_at) }}</td>
+                <td>{{ formatTime($order->created_at) }}</td>
                 <td>{{$order->ime}} {{$order->prezime}}</td>
                 {{-- <td>{{$order->email}}</td> --}}
                 <td>{{$order->telefon}}</td>
@@ -86,6 +83,13 @@
                     <a class="btn btn-secondary" href="/admin/orders/{{$order->id}}">Pogledaj</a>
                 </td>
             </tr>
+
+            @if ($loop->index == 0)
+                <tr >
+                    <td class="bg-danger text-white" colspan="8"></td>
+                </tr>
+            @endif
+
             @endforeach
         </table>
     </div>        {{-- col-sm-10  --}}
@@ -95,8 +99,9 @@
     </div>
 
 
-    <audio id="audio" src="http://www.soundjay.com/button/beep-07.wav" autoplay="false" ></audio>
-    <a onclick="playSound();"> Play</a>
+    {{-- Alert sound link / sada nepotrebno jer se iz vue.js komponente pusta zvuk  --}}
+    {{-- <audio id="audio" src="http://www.soundjay.com/button/beep-07.wav" autoplay="false" ></audio>
+    <a class="invisible" onclick="playSound();">play</a> --}}
 
 </div>         {{-- Card body  --}}
 
@@ -105,21 +110,20 @@
 @section('extra-js')
     <script>
 
-    //     function playSound() {
-    //       var sound = document.getElementById("audio");
-    //       sound.play();
-    //   }
-
-
-        window.onload = function() {
-            var sound = document.getElementById("audio");
-            sound.play();
-        };
-
+        // Stara skripta za pustanje zvuka svaki put kada se reloaduje
+        // function playSound() {
+        //   var sound = document.getElementById("audio");
+        //   sound.play();
+        // }
+        // window.onload = function() {
+        //     var sound = document.getElementById("audio");
+        //     sound.play();
+        // };
 
         $( document ).ready(function() {            
 
             // Form make get request with query string
+            // Order status change
             $('.status-radio').click(function() {
                 var form = $(this).closest('form');
                 form.submit();

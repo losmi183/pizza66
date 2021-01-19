@@ -33,8 +33,8 @@
       
       <!-- Top Navbar  -->
     <div id="top-area">
-        <a style="text-decoration: none" href="/admin"><h3 class="mt-0 primary-color mr-3" >Pizza 66 Admin</h3></a> 
-        <button title="hide/show sidebar" class="hamburger"><i class="fas fa-bars"></i></button>
+        <button title="hide/show sidebar" class="hamburger mr-3"><i class="fas fa-bars"></i></button>
+        <a style="text-decoration: none" href="/admin"><h3 class="mt-0 primary-color " >Pizza 66 Admin</h3></a> 
     </div>
 
 
@@ -55,13 +55,12 @@
                 <li class="sidebar-item"><a href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
-                    <i class="fas fa-sign-out-alt mr-1 enlarge-mobile"></i><span class="hide-mobile">Odjava</span>
+                    <i class="fas fa-sign-out-alt mr-2 enlarge-mobile"></i><span class="hide-mobile">Odjava</span>
                 </a></li>
                                 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>
-
     
         </div>
         <!-- /#sidebar-wrapper -->

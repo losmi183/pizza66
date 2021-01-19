@@ -10123,6 +10123,14 @@ body {
   height: 230px;
 }
 
+.space-240 {
+  height: 240px;
+}
+
+.space-250 {
+  height: 250px;
+}
+
 .primary-color {
   color: #e32a2f;
 }
@@ -11034,7 +11042,10 @@ table .price-info h4 {
 }
 #sidebar ul.sidebar-list li a:hover {
   text-decoration: none;
-  margin-left: 5px;
+  color: #e32a2f !important;
+}
+#sidebar ul.sidebar-list li a:hover i {
+  color: #e32a2f !important;
 }
 #sidebar ul.sidebar-list li:hover {
   background: #444;
@@ -11076,12 +11087,17 @@ table .price-info h4 {
 }
 /* Large devices (desktops, 992px and up) */
 /* Extra large devices (large desktops, 1200px and up) */
+.bg-lastest {
+  background: #e32a2f;
+  color: white;
+}
+
 .bg-active {
-  background: #fdd5d5;
+  background: #f8c786;
 }
 
 .bg-finished {
-  background: #d7fcd7;
+  background: #eee;
 }
 
 .bg-admin {

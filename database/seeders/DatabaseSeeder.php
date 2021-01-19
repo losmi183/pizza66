@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             AddonOptionsTableSeeder::class,
             UsersTableSeeder::class,
             ActionsTableSeeder::class,
+            PricesTableSeeder::class,
         ]);  
     }
 }

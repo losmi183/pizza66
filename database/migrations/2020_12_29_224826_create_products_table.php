@@ -25,8 +25,6 @@ class CreateProductsTable extends Migration
             $table->unsignedInteger('price')->nullable();
             $table->unsignedInteger('discount')->nullable();
 
-            $table->json('prices')->nullable();
-
             $table->text('image');
             $table->timestamps();
         });

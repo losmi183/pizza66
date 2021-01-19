@@ -30,4 +30,8 @@ function formatDate($time)
 {
     return date('d.m.Y. G:i', strtotime($time));
 }
+function formatTime($time)
+{
+    return date('G:i  d.m.Y. ', strtotime($time));
+}
 

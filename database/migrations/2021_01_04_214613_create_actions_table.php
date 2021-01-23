@@ -16,11 +16,16 @@ class CreateActionsTable extends Migration
         Schema::create('actions', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
+
+            $table->unsignedTinyInteger('day')->nullable();
+            $table->unsignedTinyInteger('fixed')->default(0);
+
             $table->string('old_price')->nullable();
             $table->string('new_price')->nullable();
             $table->string('description')->nullable();
-            $table->text('image');
             $table->string('status')->default('active');
+
+            $table->text('image');
             $table->timestamps();
         });
     }

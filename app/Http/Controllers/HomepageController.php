@@ -15,13 +15,23 @@ class HomepageController extends Controller
      */
     public function index()
     {
-        $actions = Action::where('status', 'active')->get();
+        // Today's day number in a week
+        $now = strtotime("now");        
+        $day_number = date('N', $now);
 
-        $pizza = Product::where('type', 'pizza')->with('prices')->inRandomOrder()->take(6)->get();
-        
+        /**
+         * Actions fetch
+         */
+        $fixedAction = Action::where('fixed', 1)->first();        
+        // daily action
+        $dailyAction = Action::where('day', $day_number)->first();
+
+
+        // 6 Products preview
+        $pizza = Product::where('type', 'pizza')->with('prices')->inRandomOrder()->take(6)->get();        
         $bbq = Product::where('type', 'bbq')->inRandomOrder()->take(6)->get();
 
-        return view('home', compact('pizza', 'bbq', 'actions'));
+        return view('home', compact('pizza', 'bbq', 'fixedAction', 'dailyAction'));
     }
 
     /**

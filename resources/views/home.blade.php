@@ -13,8 +13,8 @@
                     <i class="fas fa-book"></i>
                     <h4>Po originalnom receptu</h4>
                     <p>Posno testo</p>
-                    <p>Farina di grando brašno</p>
-                    <p>Capone Moyarella</p>
+                    <p>Divella brašno</p>
+                    <p>Mozzarella Capone</p>
                 </div>
             </div>
             <div class="col-md-4 margin-top-lg">
@@ -28,9 +28,10 @@
             <div class="col-md-4">
                 <div class="showcase-box">
                     <i class="fas fa-car"></i>
-                    <h4>Besplatna Dostava</h4>
+                    <h4>Dostava na kućnu adresu</h4>
                     <p>Starčevo, Omoljica, Brestovac i Ivanovo</p>
-                    <p>Za porudzbine preko 500 dinara</p>
+                    <p>Pizza besplatna dostava</p>
+                    <p>Roštilj za porudzbine preko 600 rsd besplatna dostava</p>
                 </div>
             </div>
         </div>
@@ -60,41 +61,53 @@
 
 <section id="actions">
     <div class="container">
-        <section class="regular slider slick-actions">
-            @foreach ($actions as $action)            
-                <div>
-                    <div class="action-wrapper">
-                        <img class="img-fluid" src="{{ asset($action->image) }}" alt="">
-                        <h3>{{$action->name}}</h3>                                                  
-                        <h3 class="text-danger mr-1">{{$action->new_price}} RSD</h3>                        
-                        <p>{{$action->description}}</p>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="action-wrapper">
+                    <img class="img-fluid" src="{{ asset($fixedAction->image) }}" alt="">
+                    <h3>{{$fixedAction->name}}</h3>                                                  
+                    <h3 class="text-danger mr-1">Već od {{$fixedAction->new_price}} RSD</h3>                        
+                    <p>{{$fixedAction->description}}</p>        
 
-                        <form action="{{route('addDrinkToCart')}}" method="POST">
-                            @csrf
+                    <div class="links mb-4">
+                        <a href="/product/tuna-posno" class="btn btn-warning mx-2">Tuna</a>
+                        <a href="/product/veggie-posno" class="btn btn-danger">Veggie</a>
+                    </div>
+                    
+                </div>     
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="action-wrapper">
+                    <img class="img-fluid" src="{{ asset($dailyAction->image) }}" alt="">
+                    <h3>{{$dailyAction->name}}</h3>                                                  
+                    <h3 class="text-danger mr-1">{{$dailyAction->new_price}} RSD</h3>                        
+                    <p>{{$dailyAction->description}}</p>
+        
+                    <form action="{{route('addDrinkToCart')}}" method="POST">
+                        @csrf
+        
+                        <input type="hidden" value="{{$dailyAction->id}}" name="id">
+                        <input type="hidden" value="{{$dailyAction->name}}" name="name">
+                        <input type="hidden" value="{{$dailyAction->new_price}}" name="price">
+                        <input type="hidden" value="{{$dailyAction->image}}" name="image">
+                        <input type="hidden" value="1" name="qty">     
+                        
+                        <button class="btn btn-danger mb-3 mt-2">Dodaj u korpu</button>
+        
+                        {{-- <button class="btn btn-danger mb-3 mt-2">
+                            <i class="fas fa-shopping-cart mr-2" aria-hidden="true">
+                            Dodaj u korpu
+                        </button> --}}
+                    </form>
+                </div>   
+            </div>
+        </div>
+    
 
-                            <input type="hidden" value="{{$action->id}}" name="id">
-                            <input type="hidden" value="{{$action->name}}" name="name">
-                            <input type="hidden" value="{{$action->new_price}}" name="price">
-                            <input type="hidden" value="{{$action->image}}" name="image">
-                            <input type="hidden" value="1" name="qty">     
-                            
-                            <button class="btn btn-danger mb-3 mt-2">Dodaj u korpu</button>
-
-                            {{-- <button class="btn btn-danger mb-3 mt-2">
-                                <i class="fas fa-shopping-cart mr-2" aria-hidden="true">
-                                Dodaj u korpu
-                            </button> --}}
-                        </form>
-
-
-                    </div>     
-                </div>            
-            @endforeach
-        </section>
     </div>
 </section>
 
-{{-- <div class="space-50"></div> --}}
+<div class="space-50"></div>
 <h1 class="title-secondary">PIZZA</h1>
 <div class="container"><hr style="background-color: orange; width: 50%;"></div>      
 <div class="space-50"></div>   

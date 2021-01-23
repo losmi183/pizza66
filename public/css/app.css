@@ -10562,6 +10562,7 @@ header .user-wrapper a:hover {
 .box-simple h3 {
   color: #e32a2f;
   font-size: 30px;
+  margin: 10px 0;
 }
 .box-simple p {
   color: #aaa;
@@ -10733,7 +10734,8 @@ header .user-wrapper a:hover {
 }
 #showcase p {
   color: #ddd;
-  font-size: 20px;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 767.98px) {

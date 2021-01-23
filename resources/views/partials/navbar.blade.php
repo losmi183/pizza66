@@ -45,7 +45,7 @@
             <div class="wrapper">
 
                 <div class="left hide-tablet">
-                    <a href="#"><i class="fas fa-truck"></i><span class="hide-mobile">Besplatna Dostava!</span></a>
+                    <a href="tel:0616675241"><i class="fas fa-mobile-alt"></i><span class="hide-mobile">0616675241</span></a>
                 </div>
 
                 <div class="center">
@@ -53,9 +53,18 @@
                         <div class="icon-wrapper">
                             <a href="/"><img src="/img/menu-icon.png" alt="pizza 66 logo"></a>                            
                         </div>
-                        <a class="a-white small-mobile" href="{{route('pizza')}}"><li class="secondary">Pizza</li></a>
-                        <a class="a-white small-mobile" href="{{route('drinks')}}"><li class="primary">Pića</li></a>
-                        <a class="a-white small-mobile nowrap hide-tablet" href="#"><li class="primary">O nama</li></a>
+                        <a class="a-white small-mobile" href="{{route('pizza')}}">
+                            <li class="{{ (request()->is('pizza')) ? 'secondary' : 'primary' }}">Pizza</li>
+                        </a>
+                        <a class="a-white small-mobile" href="{{route('bbq')}}">
+                            <li class="{{ (request()->is('bbq')) ? 'secondary' : 'primary' }}">Roštilj</li>
+                        </a>
+                        {{-- <a class="a-white small-mobile" href="{{route('drinks')}}">
+                            <li class="{{ (request()->is('drinks')) ? 'secondary' : 'primary' }}">Pića</li>
+                        </a> --}}
+                        <a class="a-white small-mobile nowrap hide-tablet" href="/about">
+                            <li class="{{ (request()->is('about')) ? 'secondary' : 'primary' }}">O nama</li>
+                        </a>
                     </ul>
                 </div>
                 

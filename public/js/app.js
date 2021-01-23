@@ -1949,12 +1949,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     window.Echo.channel('order-tracker').listen('PizzaOrdered', function (e) {
-      console.log('New Order');
-      location.reload(); // Play alert sound after reload
+      console.log('New Order'); // location.reload();
+      // Play alert sound after reload
+      // var audio = new Audio('http://www.soundjay.com/button/beep-07.wav'); // path to file
+      // audio.play();
 
-      var audio = new Audio('http://www.soundjay.com/button/beep-07.wav'); // path to file
-
-      audio.play();
+      var sound = document.getElementById("audio");
+      console.log(sound);
+      sound.play();
     });
   }
 });
@@ -56736,7 +56738,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.Pusher = __webpack_require__(/*! pusher-js */ "./node_modules/pusher-js/dist/web/pusher.js");
 window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   broadcaster: 'pusher',
-  key: "aee120f012c902ff1e80",
+  key: "d6e78622982e7ad6df8e",
   cluster: "eu",
   forceTLS: true // encripted: true
 

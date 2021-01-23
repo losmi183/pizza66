@@ -22,6 +22,13 @@ class ShopController extends Controller
         return view('drinks', compact('drinks'));
     }
 
+    public function bbq()
+    {        
+        $bbq = Product::where('type', 'bbq')->get();
+
+        return view('bbq', compact('bbq'));
+    }
+
     public function show($slug)
     {
         $product = Product::where('slug', $slug)->first();

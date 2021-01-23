@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ProductsTableSeeder::class,
             DrinksTableSeeder::class,
+            BbqTableSeeder::class,
             AddonsTableSeeder::class,
             AddonOptionsTableSeeder::class,
             UsersTableSeeder::class,

@@ -12,6 +12,7 @@
         display: flex;
         align-items: center;
         a {
+            font-size: 18px;
             color: white;
             &:hover, &:visited {
                 color: white;
@@ -19,7 +20,8 @@
             }
         }
         i {
-            color: $secondary-color;
+            color: white;
+            font-size: 20px;
             margin-right: 10px;
         }
     }

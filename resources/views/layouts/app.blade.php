@@ -4,7 +4,7 @@
 
     @include('partials.navbar')
     
-    <div class="space-250"></div>  
+    <div class="space-225"></div>  
 
     {{-- Showing current session  --}}
     {{-- <h1 class="bg-primary text-white">{{ session('order_id') }}</h1> --}}
@@ -22,25 +22,31 @@
 
             <div class="col-4">
                 <div class="box-simple">
-                    <i class="fas fa-truck"></i>
-                    <h3>Dostava</h3>
-                    <p>Besplatna dostava za Omoljicu Ivanovo Brestovac i Starčevo</p>
+                    <a href="/delivery">
+                        <i class="fas fa-truck"></i>
+                        <h3>Dostava</h3>
+                        <p>Besplatna dostava za Omoljicu Ivanovo Brestovac i Starčevo</p>
+                    </a>
                 </div>
             </div>
             
             <div class="col-4">
                 <div class="box-simple">
-                    <i class="far fa-question-circle"></i>
-                    <h3>Pitanja</h3>
-                    <p>Najčešća pitanja i odgovori</p>
+                    <a href="/questions">
+                        <i class="far fa-question-circle"></i>
+                        <h3>Pitanja</h3>
+                        <p>Najčešća pitanja i odgovori</p>
+                    </a>
                 </div>
             </div>
             
             <div class="col-4">
                 <div class="box-simple">
-                    <i class="fas fa-money-bill-wave"></i>
-                    <h3>Plaćanje</h3>
-                    <p>Uslovi i plaćanje</p>
+                    <a href="/payment">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <h3>Plaćanje</h3>
+                        <p>Uslovi i plaćanje</p>
+                    </a>
                 </div>
             </div>
 

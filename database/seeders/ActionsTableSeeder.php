@@ -15,29 +15,47 @@ class ActionsTableSeeder extends Seeder
     public function run()
     {
         Action::create([
-            'name' => 'Tihi breg ',
-            'old_price' => '1400 RSD',
-            'new_price' => '1200 RSD',
-            'description' => 'Besplatna dostava: Starcevo, Omoljica, Ivanovo i Brestovac',
-            'image' => '/img/actions/1.jpg'
+            'name' => 'Ponedeljak Tihi breg ',
+            'new_price' => '1280',
+            'description' => 'Tihi Breg 51cm + Pepsi cola 1.5L',
+            'image' => '/img/actions/tihi-breg.jpg'
         ]);
         Action::create([
-            'name' => 'Pizza po izboru',
-            'new_price' => 'Pepsi Cola Gratis',
-            'description' => 'Besplatna dostava: Starcevo, Omoljica, Ivanovo i Brestovac',
-            'image' => '/img/actions/2.jpg'
+            'name' => 'Utorak Pizza 66',
+            'new_price' => '1140',
+            'description' => 'Pizza 66 51cm + Pepsi cola 1.5L',
+            'image' => '/img/actions/pizza-66.jpg'
         ]);
         Action::create([
-            'name' => 'Nedeljom Porodična ',
-            'new_price' => '90% popusta',
-            'description' => 'Akcija 3',
-            'image' => '/img/actions/1.jpg'
+            'name' => 'Sreda Cezar pizza ',
+            'new_price' => '1240',
+            'description' => 'Cezar pizza 51cm + Pepsi cola 1.5L',
+            'image' => '/img/actions/cezar-pizza.jpg'
         ]);
         Action::create([
-            'name' => 'Nedeljom Porodična ',
-            'new_price' => 'Bez popusta',
-            'description' => 'Full cena',
-            'image' => '/img/actions/2.jpg'
+            'name' => 'Četvrtak Garlic Bacon ',
+            'new_price' => '990',
+            'description' => 'Garlic Bacon pizza 51cm + Pepsi cola 1.5L',
+            'image' => '/img/actions/garlic-bacon.jpg'
         ]);
+        Action::create([
+            'name' => 'Petak Hot chilly pepers ',
+            'new_price' => '990',
+            'description' => 'Hot chilly pepers 51cm + Pepsi cola 1.5L',
+            'image' => '/img/actions/hot-chilly-pepers.jpg'
+        ]);
+        Action::create([
+            'name' => 'Subota Five mix chiese',
+            'new_price' => '1160',
+            'description' => 'Five mix chiese 51cm + Pepsi cola 1.5L',
+            'image' => '/img/actions/five-mix-chiese.jpg'
+        ]);
+        Action::create([
+            'name' => 'Nedelja BBQ',
+            'new_price' => '1190',
+            'description' => 'BBQ 51cm + Pepsi cola 1.5L',
+            'image' => '/img/actions/bbq.jpg'
+        ]);
+
     }
 }

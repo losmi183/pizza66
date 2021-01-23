@@ -100,8 +100,9 @@
 
 
     {{-- Alert sound link / sada nepotrebno jer se iz vue.js komponente pusta zvuk  --}}
-    {{-- <audio id="audio" src="http://www.soundjay.com/button/beep-07.wav" autoplay="false" ></audio>
-    <a class="invisible" onclick="playSound();">play</a> --}}
+    <audio id="audio" src="http://www.soundjay.com/button/beep-07.wav" autoplay="false" muted="muted"></audio>
+
+    <a class="invisible" onclick="playSound();">play</a>
 
 </div>         {{-- Card body  --}}
 

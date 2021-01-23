@@ -19,9 +19,9 @@ class HomepageController extends Controller
 
         $pizza = Product::where('type', 'pizza')->with('prices')->inRandomOrder()->take(6)->get();
         
-        $drinks = Product::where('type', 'drink')->inRandomOrder()->take(6)->get();
+        $bbq = Product::where('type', 'bbq')->inRandomOrder()->take(6)->get();
 
-        return view('home', compact('pizza', 'drinks', 'actions'));
+        return view('home', compact('pizza', 'bbq', 'actions'));
     }
 
     /**

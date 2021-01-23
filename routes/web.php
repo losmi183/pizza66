@@ -47,10 +47,20 @@ Route::get('/home', [HomepageController::class, 'index'])->name('home');
 
 Route::get('/pizza', [ShopController::class, 'pizza'])->name('pizza');
 
-Route::get('/drinks', [ShopController::class, 'drinks'])->name('drinks');
+// Route::get('/drinks', [ShopController::class, 'drinks'])->name('drinks');
+Route::get('/bbq', [ShopController::class, 'bbq'])->name('bbq');
 
-
+// Single product route
 Route::get('/product/{slug}', [ShopController::class, 'show'])->name('product');
+
+/**
+ * Info pages routes
+ */
+
+Route::get('/about', function() { return view('info.about'); });
+Route::get('/questions', function() { return view('info.questions'); });
+Route::get('/delivery', function() { return view('info.delivery'); });
+Route::get('/payment', function() { return view('info.payment'); });
 
 
 /**

@@ -22,7 +22,7 @@ class HomepageController extends Controller
         /**
          * Actions fetch
          */
-        $fixedAction = Action::where('fixed', 1)->first();        
+        $fixedAction = Action::where('fixed', 1)->orderBy('created_at', 'DESC')->first();        
         // daily action
         $dailyAction = Action::where('day', $day_number)->first();
 

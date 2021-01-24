@@ -20,9 +20,10 @@
             <div class="col-md-4 margin-top-lg">
                 <div class="showcase-box">
                     <i class="far fa-clock"></i>
-                    <h4>Radno Vreme</h4>
-                    <p>utorak - nedelja</p>
-                    <p>09 - 23</p>
+                    <h4>Radno vreme</h4>
+                    <p>Od ponedeljka do četvrtka 12h - 00h</p>
+                    <p>Petak i Subota 12h - 01h</p>
+                    <p>Nedelja 16h - 00h</p>
                 </div>
             </div>
             <div class="col-md-4">

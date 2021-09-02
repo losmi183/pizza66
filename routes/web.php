@@ -36,9 +36,6 @@ Route::get('/fire', function()
 
 
 Route::get('/', [HomepageController::class, 'index'])->name('/');
-// Route::get('/', function() {
-//     return 'asdasdasd';
-// });
 
 Auth::routes();
 

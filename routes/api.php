@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\ShopController;
+use App\Http\Controllers\Api\HomepageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/', [HomepageController::class, 'index']);
+Route::get('/pizza', [ShopController::class, 'pizza']);
+Route::get('/drinks', [ShopController::class, 'drinks']);
+Route::get('/bbq', [ShopController::class, 'bbq']);
+Route::get('/product/{slug}', [ShopController::class, 'show']);

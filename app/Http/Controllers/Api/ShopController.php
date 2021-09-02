@@ -6,6 +6,8 @@ use App\Models\Addon;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\AddonResource;
+use App\Http\Resources\ProductResource;
 
 class ShopController extends Controller
 {
@@ -13,21 +15,21 @@ class ShopController extends Controller
     {
         $pizza = Product::where('type', 'pizza')->get();
 
-        return response()->json($pizza, 200);
+        return ProductResource::collection($pizza);
     }
 
     public function drinks()
     {
         $drinks = Product::where('type', 'drink')->get();
 
-        return response()->json($drinks, 200);
+        return ProductResource::collection($drinks);
     }
 
     public function bbq()
     {
         $bbq = Product::where('type', 'bbq')->get();
 
-        return response()->json($bbq, 200);
+        return ProductResource::collection($bbq);
     }
 
     public function show($slug)
@@ -41,8 +43,8 @@ class ShopController extends Controller
         $addons = Addon::with('addonOption')->get();
 
         $data = [
-            'product' => $product,
-            'addons' => $addons
+            'product' => new ProductResource($product),
+            'addons' => AddonResource::collection($addons)
         ];
         
         return response()->json($data, 200);

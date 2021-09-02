@@ -6,6 +6,9 @@ use App\Models\Action;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\DailyActionResource;
+use App\Http\Resources\FixedActionResource;
+use App\Http\Resources\ProductResource;
 
 class HomepageController extends Controller
 {
@@ -28,10 +31,10 @@ class HomepageController extends Controller
         $bbq = Product::where('type', 'bbq')->inRandomOrder()->take(6)->get();
 
         $data = [
-            'pizza' => $pizza,
-            'bbq' => $bbq,
-            'fixedAction' => $fixedAction,
-            'dailyAction' => $dailyAction,
+            'pizza' => ProductResource::collection($pizza),
+            'bbq' => ProductResource::collection($bbq),
+            'fixedAction' => new FixedActionResource($fixedAction),
+            'dailyAction' => new DailyActionResource($dailyAction),
         ];
 
         return response()->json($data, 200);

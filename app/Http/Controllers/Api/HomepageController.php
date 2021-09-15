@@ -29,10 +29,12 @@ class HomepageController extends Controller
         // 6 Products preview
         $pizza = Product::where('type', 'pizza')->with('prices')->inRandomOrder()->take(6)->get();        
         $bbq = Product::where('type', 'bbq')->inRandomOrder()->take(6)->get();
+        $drinks = Product::where('type', 'drink')->inRandomOrder()->take(6)->get();
 
         $data = [
             'pizza' => ProductResource::collection($pizza),
             'bbq' => ProductResource::collection($bbq),
+            'drink' => ProductResource::collection($drinks),
             'fixedAction' => new FixedActionResource($fixedAction),
             'dailyAction' => new DailyActionResource($dailyAction),
         ];

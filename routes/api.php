@@ -25,3 +25,6 @@ Route::get('/pizza', [ShopController::class, 'pizza']);
 Route::get('/drinks', [ShopController::class, 'drinks']);
 Route::get('/bbq', [ShopController::class, 'bbq']);
 Route::get('/product/{slug}', [ShopController::class, 'show']);
+
+Route::get('/addons', [ShopController::class, 'addons']);
+Route::get('/addonOptions', [ShopController::class, 'addonOptions']);

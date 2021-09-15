@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\AddonResource;
 use App\Http\Resources\ProductResource;
+use App\Models\AddonOption;
 
 class ShopController extends Controller
 {
@@ -44,9 +45,17 @@ class ShopController extends Controller
 
         $data = [
             'product' => new ProductResource($product),
-            'addons' => AddonResource::collection($addons)
+            'addons' => $addons
         ];
         
         return response()->json($data, 200);
     }
+
+    public function addons() {
+        return Addon::all();
+    }
+    public function addonOptions() {
+        return AddonOption::all();
+    }
+
 }
